@@ -1,3 +1,6 @@
+/* styles.css */
+
+/* --- Universal Styles & Font Imports --- */
 /* Import Source Sans Pro from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
 
@@ -20,28 +23,37 @@ body {
     color: #000000; /* Default text color */
 }
 
+/* --- Common Section Title Styling --- */
+.section-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    text-align: center;
+    color: #000000; /* Default color for section titles */
+}
+
+.section-title span {
+    font-weight: 700; /* Bold weight for the emphasized part */
+}
+
 /* --- Header Styling (Hero Section) --- */
 .hero-header {
     width: 100%;
-    /* Figma suggests a height around 800px, but it's often min-height for responsiveness */
-    min-height: 800px; /* Adjust height as per Figma or desired visual */
-    background-image: url('https://placehold.co/1920x800/2C2C2C/FFFFFF?text=PLACEHOLDER+BACKGROUND+IMAGE'); /* Placeholder for the background image */
-    /* User should download the actual smiling woman image from Figma and replace this URL. */
-    /* Example: url('../images/hero-background.jpg') if images are in a subfolder */
+    min-height: 800px;
+    background-image: url('https://placehold.co/1920x800/2C2C2C/FFFFFF?text=PLACEHOLDER+BACKGROUND+IMAGE');
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */ /* Remove or adjust based on exact content alignment */
-    /* justify-content: flex-start; */ /* Remove or adjust based on exact content alignment */
-    position: relative; /* Needed for pseudo-element overlay */
-    padding-top: 20px; /* Space for top navigation */
-    box-sizing: border-box; /* Include padding in element's total width and height */
-    justify-content: space-between; /* Pushes nav to top, content to center */
-    padding-bottom: 50px; /* Padding at the bottom of the hero section */
+    position: relative;
+    padding-top: 20px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    padding-bottom: 50px;
 }
 
-/* Overlay for the header background to dim the image */
 .hero-header::before {
     content: '';
     position: absolute;
@@ -49,8 +61,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* 40% opaque black overlay as per Figma feel */
-    z-index: 1; /* Ensure overlay is above background image but below content */
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
 }
 
 /* --- Main Navigation within Header --- */
@@ -58,29 +70,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 80%; /* Adjust to match Figma's width for content area */
-    max-width: 1200px; /* Example max-width for navigation */
-    margin: 0 auto; /* Center the navigation bar */
-    position: relative; /* Ensure it's above the overlay */
-    z-index: 2; /* Bring navigation to front */
-    padding: 10px 0; /* Vertical padding for nav bar */
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+    padding: 10px 0;
 }
 
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between logo image and text */
+    gap: 10px;
 }
 
 .logo-container img {
-    height: 30px; /* Adjust height as per Figma logo size */
+    height: 30px;
     width: auto;
 }
 
 .logo-container span {
     color: #FFFFFF;
-    font-size: 1.5rem; /* Adjust font size as per Figma */
-    font-weight: 600; /* Source Sans Pro SemiBold */
+    font-size: 1.5rem;
+    font-weight: 600;
 }
 
 .main-nav ul {
@@ -88,14 +100,14 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 30px; /* Space between nav items */
+    gap: 30px;
 }
 
 .main-nav ul li a {
     color: #FFFFFF;
     text-decoration: none;
-    font-size: 0.9rem; /* Smaller font size for nav links */
-    font-weight: 600; /* Source Sans Pro SemiBold */
+    font-size: 0.9rem;
+    font-weight: 600;
     text-transform: uppercase;
     transition: opacity 0.3s ease;
 }
@@ -106,36 +118,35 @@ body {
 
 /* --- Hero Content (Get schooled, tagline, button) --- */
 .hero-content {
-    position: relative; /* Ensure it's above the overlay */
-    z-index: 2; /* Bring content to front */
+    position: relative;
+    z-index: 2;
     color: #FFFFFF;
     text-align: center;
-    flex-grow: 1; /* Allows content to push nav/footer to ends if header is flex-column */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center content within hero */
-    align-items: center; /* Horizontally center content within hero */
-    padding: 0 20px; /* Horizontal padding */
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
 }
 
 .hero-content h1 {
-    /* Assuming "Spin Cycle OT" is used for "Get schooled" */
-    font-family: 'Spin Cycle OT', sans-serif; /* If Spin Cycle is loaded, use it */
-    font-size: 6rem; /* Large font size for "Get schooled" (adjust per Figma) */
-    font-weight: 700; /* Bold */
+    font-family: 'Spin Cycle OT', sans-serif; /* Fallback to sans-serif if not loaded */
+    font-size: 6rem;
+    font-weight: 700;
     margin: 0;
     line-height: 1;
-    text-transform: uppercase; /* As per Figma design */
+    text-transform: uppercase;
 }
 
 .hero-tagline {
     font-size: 1.5rem;
-    font-weight: 600; /* Source Sans Pro SemiBold */
-    letter-spacing: 0.2em; /* Wide letter spacing */
+    font-weight: 600;
+    letter-spacing: 0.2em;
     margin-top: 20px;
-    display: flex; /* Use flex to space out words */
+    display: flex;
     justify-content: center;
-    gap: 20px; /* Space between words */
+    gap: 20px;
     text-transform: uppercase;
 }
 
@@ -143,15 +154,15 @@ body {
     background-color: #AC5AEE; /* Purple color from Figma */
     color: #FFFFFF;
     border: none;
-    border-radius: 25px; /* Rounded pill shape */
+    border-radius: 25px;
     padding: 15px 30px;
     font-size: 1.2rem;
-    font-weight: 600; /* Source Sans Pro SemiBold */
+    font-weight: 600;
     text-transform: uppercase;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 40px; /* Space from tagline */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .register-button:hover {
@@ -163,44 +174,35 @@ body {
 .pros-section {
     background-color: #2F2F2F; /* Dark background color */
     color: #FFFFFF;
-    padding: 80px 20px; /* Ample vertical padding */
+    padding: 80px 20px;
     text-align: center;
 }
 
-.pros-section .section-title {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 3rem; /* Large font size for title */
-    font-weight: 300; /* Lighter weight for "Learn" */
-    margin-bottom: 50px;
-    line-height: 1.2;
-}
-
 .pros-section .section-title span {
-    font-weight: 700; /* Bold weight for "from the pros" */
     color: #AC5AEE; /* Purple color for "Learn" */
 }
 
 .speaker-cards-container {
     display: flex;
-    flex-wrap: wrap; /* Allow cards to wrap to next line */
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 30px; /* Space between speaker cards */
-    max-width: 1200px; /* Limit overall width */
-    margin: 0 auto; /* Center the container */
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .speaker-card {
-    background-color: transparent; /* No background for card itself */
+    background-color: transparent;
     text-align: center;
-    width: 200px; /* Fixed width for each card, adjust as per Figma */
-    flex-shrink: 0; /* Prevent shrinking below content size */
+    width: 200px;
+    flex-shrink: 0;
 }
 
 .speaker-card img {
-    width: 120px; /* Diameter for circular image */
-    height: 120px; /* Diameter for circular image */
-    border-radius: 50%; /* Make image circular */
-    object-fit: cover; /* Ensure image covers the circle */
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
     border: 3px solid #AC5AEE; /* Purple border around image */
     margin-bottom: 15px;
 }
@@ -221,30 +223,386 @@ body {
     color: #C0C0C0; /* Lighter grey for description */
 }
 
+/* --- Quote Section Styling --- */
+.quote-section {
+    background-color: #AC5AEE; /* Purple background from Figma */
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.quote-content {
+    display: flex;
+    align-items: center; /* Align image and text vertically */
+    max-width: 900px;
+    gap: 40px;
+}
+
+.quote-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    /* Placeholder for the avatar image from Figma */
+    background-image: url('https://placehold.co/160x160/B0B0B0/FFFFFF?text=Avatar'); /* User to replace with actual image */
+    background-size: cover;
+    background-position: center;
+    border: 3px solid #FFFFFF; /* White border around avatar */
+}
+
+.quote-text-container {
+    text-align: left;
+}
+
+.quote-text-container blockquote {
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.quote-text-container blockquote::before {
+    content: '\201C';
+    font-size: 4em;
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: -0.5em;
+    top: -0.3em;
+    line-height: 1;
+    z-index: 1;
+}
+
+.quote-text-container blockquote p {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.quote-author {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.quote-author-title {
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* --- Videos List Section Styling --- */
+.videos-list-section {
+    background-color: #FFFFFF; /* White background */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.videos-list-section .section-title span {
+    color: #AC5AEE; /* Purple for 'popular' */
+}
+
+.filter-controls {
+    /* Styles for dropdowns/filters if implemented in HTML */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    color: #000000; /* Ensure text is visible on white background */
+}
+
+.video-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.video-card {
+    background-color: #FFFFFF;
+    text-align: left;
+    width: 250px; /* Width based on Figma for each video card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Ensures image corners are rounded */
+    transition: transform 0.2s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Fixed height for thumbnails as per Figma */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Placeholder background */
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers area without distortion */
+    display: block;
+}
+
+.video-thumbnail .play-icon {
+    position: absolute;
+    font-size: 3rem; /* Large play icon */
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for icon */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.video-thumbnail .play-icon:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.video-card h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 15px 15px 5px 15px; /* Spacing */
+    line-height: 1.3;
+}
+
+.video-card p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #555555;
+    margin: 0 15px 10px 15px;
+    line-height: 1.5;
+}
+
+.author-info {
+    display: flex;
+    align-items: center;
+    padding: 0 15px 15px 15px;
+    gap: 10px;
+}
+
+.author-info img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-info span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #AC5AEE; /* Purple for author name */
+}
+
+.rating-duration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 15px 15px 15px;
+}
+
+.rating-duration .stars {
+    color: #AC5AEE; /* Purple for stars */
+    font-size: 1rem;
+}
+
+.rating-duration .duration {
+    font-size: 0.85rem;
+    color: #888888;
+}
+
+/* --- Membership Section Styling --- */
+.membership-section {
+    background-color: #000000; /* Black background */
+    color: #FFFFFF;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.membership-section .section-title {
+    color: #FFFFFF; /* White title on black background */
+}
+
+.membership-section .section-title span {
+    color: #AC5AEE; /* Purple for 'Our' */
+}
+
+.membership-benefits {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px; /* Space between benefit cards */
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.benefit-card {
+    width: 200px; /* Width for each benefit item */
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.benefit-card img {
+    width: 80px; /* Size of benefit icons */
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.benefit-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 10px 0;
+}
+
+.benefit-card p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #B0B0B0; /* Lighter grey for description */
+    line-height: 1.5;
+}
+
+.membership-section .register-button {
+    background-color: #AC5AEE; /* Purple button */
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+/* --- FAQ Section Styling --- */
+.faq-section {
+    background-color: #FFFFFF; /* White background */
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.faq-section .section-title span {
+    color: #AC5AEE; /* Purple for 'F.A.Q.' */
+}
+
+.faq-items-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px; /* Space between FAQ columns */
+    max-width: 1000px;
+    margin: 50px auto;
+}
+
+.faq-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 45%; /* Two columns, adjust as needed */
+    min-width: 300px; /* Ensure a minimum width for readability */
+}
+
+.faq-item {
+    text-align: left;
+    background-color: transparent;
+    padding: 0; /* No padding on item itself, handled by content */
+}
+
+.faq-item h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 10px 0;
+}
+
+.faq-item p {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Footer Styling --- */
+footer {
+    background-color: #2F2F2F; /* Dark background from Figma */
+    color: #FFFFFF;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+footer .logo-container {
+    justify-content: center; /* Center logo in footer */
+    margin-bottom: 20px;
+}
+
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+footer .social-icon {
+    width: 30px; /* Size of social media icons */
+    height: 30px;
+    filter: invert(1); /* Example to make white if original is black */
+    transition: transform 0.2s ease;
+}
+
+footer .social-icon:hover {
+    transform: translateY(-3px);
+}
+
+footer p.copyright {
+    color: #C0C0C0; /* Lighter grey for copyright text */
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
     .hero-header {
-        min-height: 600px; /* Adjust height for smaller screens */
+        min-height: 600px;
         padding-top: 15px;
     }
 
     .main-nav {
-        flex-direction: column; /* Stack logo and nav vertically */
+        flex-direction: column;
         gap: 15px;
     }
 
     .main-nav ul {
-        flex-direction: column; /* Stack nav links vertically */
+        flex-direction: column;
         gap: 10px;
     }
 
     .hero-content h1 {
-        font-size: 4rem; /* Smaller font for mobile heading */
+        font-size: 4rem;
     }
 
     .hero-tagline {
         font-size: 1.2rem;
-        flex-direction: column; /* Stack tagline words vertically */
+        flex-direction: column;
         gap: 5px;
     }
 
@@ -262,12 +620,86 @@ body {
     }
 
     .speaker-cards-container {
-        flex-direction: column; /* Stack speaker cards vertically */
-        align-items: center; /* Center stacked cards */
+        flex-direction: column;
+        align-items: center;
     }
 
     .speaker-card {
-        width: 100%; /* Take full width when stacked */
-        max-width: 250px; /* Or a max-width for better look */
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .quote-section {
+        padding: 60px 15px;
+    }
+
+    .quote-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .quote-text-container {
+        text-align: center;
+    }
+
+    .quote-avatar {
+        width: 120px;
+        height: 120px;
+    }
+
+    .quote-text-container blockquote {
+        font-size: 1.4rem;
+    }
+    .quote-text-container blockquote::before {
+        left: -0.2em;
+        top: -0.2em;
+        font-size: 3em;
+    }
+
+    .videos-list-section {
+        padding: 60px 15px;
+    }
+
+    .filter-controls {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 30px;
+    }
+
+    .video-card {
+        width: 90%; /* Make video cards wider on small screens */
+        max-width: 300px; /* Constrain max width */
+    }
+
+    .membership-section {
+        padding: 60px 15px;
+    }
+
+    .membership-benefits {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .benefit-card {
+        width: 100%;
+        max-width: 250px; /* Or adjust as needed */
+    }
+
+    .faq-section {
+        padding: 60px 15px;
+    }
+
+    .faq-items-container {
+        flex-direction: column; /* Stack FAQ columns vertically */
+        gap: 30px;
+    }
+
+    .faq-column {
+        width: 100%; /* Take full width */
+    }
+
+    footer {
+        padding: 30px 15px;
     }
 }
