@@ -1,0 +1,273 @@
+/* Import Source Sans Pro from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+/* For Spin Cycle OT, if it's a custom font, you'd typically use @font-face like this: */
+/*
+@font-face {
+    font-family: 'Spin Cycle OT';
+    src: url('path/to/SpinCycleOT.woff2') format('woff2'),
+         url('path/to/SpinCycleOT.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif; /* Primary font for the body */
+    background-color: #ffffff; /* Default background for the whole page */
+    color: #000000; /* Default text color */
+}
+
+/* --- Header Styling (Hero Section) --- */
+.hero-header {
+    width: 100%;
+    /* Figma suggests a height around 800px, but it's often min-height for responsiveness */
+    min-height: 800px; /* Adjust height as per Figma or desired visual */
+    background-image: url('https://placehold.co/1920x800/2C2C2C/FFFFFF?text=PLACEHOLDER+BACKGROUND+IMAGE'); /* Placeholder for the background image */
+    /* User should download the actual smiling woman image from Figma and replace this URL. */
+    /* Example: url('../images/hero-background.jpg') if images are in a subfolder */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */ /* Remove or adjust based on exact content alignment */
+    /* justify-content: flex-start; */ /* Remove or adjust based on exact content alignment */
+    position: relative; /* Needed for pseudo-element overlay */
+    padding-top: 20px; /* Space for top navigation */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+    justify-content: space-between; /* Pushes nav to top, content to center */
+    padding-bottom: 50px; /* Padding at the bottom of the hero section */
+}
+
+/* Overlay for the header background to dim the image */
+.hero-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* 40% opaque black overlay as per Figma feel */
+    z-index: 1; /* Ensure overlay is above background image but below content */
+}
+
+/* --- Main Navigation within Header --- */
+.main-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%; /* Adjust to match Figma's width for content area */
+    max-width: 1200px; /* Example max-width for navigation */
+    margin: 0 auto; /* Center the navigation bar */
+    position: relative; /* Ensure it's above the overlay */
+    z-index: 2; /* Bring navigation to front */
+    padding: 10px 0; /* Vertical padding for nav bar */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo image and text */
+}
+
+.logo-container img {
+    height: 30px; /* Adjust height as per Figma logo size */
+    width: auto;
+}
+
+.logo-container span {
+    color: #FFFFFF;
+    font-size: 1.5rem; /* Adjust font size as per Figma */
+    font-weight: 600; /* Source Sans Pro SemiBold */
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px; /* Space between nav items */
+}
+
+.main-nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 0.9rem; /* Smaller font size for nav links */
+    font-weight: 600; /* Source Sans Pro SemiBold */
+    text-transform: uppercase;
+    transition: opacity 0.3s ease;
+}
+
+.main-nav ul li a:hover {
+    opacity: 0.8;
+}
+
+/* --- Hero Content (Get schooled, tagline, button) --- */
+.hero-content {
+    position: relative; /* Ensure it's above the overlay */
+    z-index: 2; /* Bring content to front */
+    color: #FFFFFF;
+    text-align: center;
+    flex-grow: 1; /* Allows content to push nav/footer to ends if header is flex-column */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center content within hero */
+    align-items: center; /* Horizontally center content within hero */
+    padding: 0 20px; /* Horizontal padding */
+}
+
+.hero-content h1 {
+    /* Assuming "Spin Cycle OT" is used for "Get schooled" */
+    font-family: 'Spin Cycle OT', sans-serif; /* If Spin Cycle is loaded, use it */
+    font-size: 6rem; /* Large font size for "Get schooled" (adjust per Figma) */
+    font-weight: 700; /* Bold */
+    margin: 0;
+    line-height: 1;
+    text-transform: uppercase; /* As per Figma design */
+}
+
+.hero-tagline {
+    font-size: 1.5rem;
+    font-weight: 600; /* Source Sans Pro SemiBold */
+    letter-spacing: 0.2em; /* Wide letter spacing */
+    margin-top: 20px;
+    display: flex; /* Use flex to space out words */
+    justify-content: center;
+    gap: 20px; /* Space between words */
+    text-transform: uppercase;
+}
+
+.register-button {
+    background-color: #AC5AEE; /* Purple color from Figma */
+    color: #FFFFFF;
+    border: none;
+    border-radius: 25px; /* Rounded pill shape */
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: 600; /* Source Sans Pro SemiBold */
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 40px; /* Space from tagline */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+.register-button:hover {
+    background-color: #9240D9; /* Slightly darker purple on hover */
+    transform: translateY(-2px);
+}
+
+/* --- Section Styling (Learn from the pros) --- */
+.pros-section {
+    background-color: #2F2F2F; /* Dark background color */
+    color: #FFFFFF;
+    padding: 80px 20px; /* Ample vertical padding */
+    text-align: center;
+}
+
+.pros-section .section-title {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 3rem; /* Large font size for title */
+    font-weight: 300; /* Lighter weight for "Learn" */
+    margin-bottom: 50px;
+    line-height: 1.2;
+}
+
+.pros-section .section-title span {
+    font-weight: 700; /* Bold weight for "from the pros" */
+    color: #AC5AEE; /* Purple color for "Learn" */
+}
+
+.speaker-cards-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap to next line */
+    justify-content: center;
+    gap: 30px; /* Space between speaker cards */
+    max-width: 1200px; /* Limit overall width */
+    margin: 0 auto; /* Center the container */
+}
+
+.speaker-card {
+    background-color: transparent; /* No background for card itself */
+    text-align: center;
+    width: 200px; /* Fixed width for each card, adjust as per Figma */
+    flex-shrink: 0; /* Prevent shrinking below content size */
+}
+
+.speaker-card img {
+    width: 120px; /* Diameter for circular image */
+    height: 120px; /* Diameter for circular image */
+    border-radius: 50%; /* Make image circular */
+    object-fit: cover; /* Ensure image covers the circle */
+    border: 3px solid #AC5AEE; /* Purple border around image */
+    margin-bottom: 15px;
+}
+
+.speaker-card h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0 0 5px 0;
+}
+
+.speaker-card p {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #C0C0C0; /* Lighter grey for description */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .hero-header {
+        min-height: 600px; /* Adjust height for smaller screens */
+        padding-top: 15px;
+    }
+
+    .main-nav {
+        flex-direction: column; /* Stack logo and nav vertically */
+        gap: 15px;
+    }
+
+    .main-nav ul {
+        flex-direction: column; /* Stack nav links vertically */
+        gap: 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 4rem; /* Smaller font for mobile heading */
+    }
+
+    .hero-tagline {
+        font-size: 1.2rem;
+        flex-direction: column; /* Stack tagline words vertically */
+        gap: 5px;
+    }
+
+    .register-button {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    .pros-section {
+        padding: 60px 15px;
+    }
+
+    .pros-section .section-title {
+        font-size: 2.5rem;
+    }
+
+    .speaker-cards-container {
+        flex-direction: column; /* Stack speaker cards vertically */
+        align-items: center; /* Center stacked cards */
+    }
+
+    .speaker-card {
+        width: 100%; /* Take full width when stacked */
+        max-width: 250px; /* Or a max-width for better look */
+    }
+}
